@@ -1,0 +1,32 @@
+header .app-bar {
+  background-color: #fff;
+  color: darkslategray;
+  box-shadow: none;
+  padding: 1rem 4.3rem;
+}
+header .app-bar .heading {
+  font-weight: 600;
+}
+@media (max-width: 900px) {
+  header .app-bar {
+    padding: 0.5rem;
+  }
+}
+.job-header {
+  color: gray;
+}
+main {
+  padding-top: 4.3rem;
+  background-color: #e2e9ff;
+  height: 100vh;
+}
+* {
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+body {
+    overflow-x: hidden;
+}
+
+/*# sourceMappingURL=/src.e31bb0bc.css.map */
