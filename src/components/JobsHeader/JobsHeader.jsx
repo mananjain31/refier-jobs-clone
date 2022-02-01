@@ -10,7 +10,7 @@ const JobsHeader = () => {
   
   return <header>
       <AppBar color='inherit' className='app-bar' position='sticky'>
-        <Toolbar>
+        <>
           <Grid container justifyContent='space-between' alignItems='center'>
             <Grid item>
               <Typography 
@@ -22,7 +22,7 @@ const JobsHeader = () => {
               <Navigations/>
             </Grid>
           </Grid>
-        </Toolbar>
+        </>
       </AppBar>
   </header>;
 };

@@ -3,3 +3,6 @@ header -
         smDown
         mdUp
 
+5.2rem padding for desktop :
+    header in x axis
+    main in both axis

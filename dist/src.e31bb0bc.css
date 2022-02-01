@@ -2,7 +2,7 @@ header .app-bar {
   background-color: #fff;
   color: darkslategray;
   box-shadow: none;
-  padding: 1rem 4.3rem;
+  padding: 1.2rem 5.2rem;
 }
 header .app-bar .heading {
   font-weight: 600;
@@ -12,13 +12,61 @@ header .app-bar .heading {
     padding: 0.5rem;
   }
 }
-.job-header {
+.card {
+  padding: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.card .job-header {
+  display: flex;
+  justify-content: space-between;
+}
+.card .job-header .heading {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.card .job-header .heading > * {
+  font-weight: 600;
+}
+.card .job-header .heading .sub-heading > * {
   color: gray;
 }
+.card .job-header .avatar {
+  width: 70px;
+  height: 70px;
+}
+.card .icon-info .icon-text {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.card .card-content {
+  color: gray;
+}
+.card .card-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.card .card-actions > * {
+  font-size: 0.9rem;
+}
+.card .card-actions .apply-btn {
+  margin-left: auto;
+  background: teal;
+  color: white;
+  box-shadow: 1px 5px 15px gray;
+}
+.card .card-actions .apply-btn:hover {
+  color: lightseagreen;
+}
 main {
-  padding-top: 4.3rem;
+  box-sizing: border-box;
+  padding: 5.2rem;
   background-color: #e2e9ff;
-  height: 100vh;
 }
 * {
     margin : 0;

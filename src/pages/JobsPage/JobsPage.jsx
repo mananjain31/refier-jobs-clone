@@ -10,14 +10,14 @@ const JobsPage = () => {
   return <>
     <JobsHeader/>
     <main>
-      <Grid container justifyContent='center' spacing={3}>
-        <Grid item md={2}>
+      <Grid container justifyContent='center' spacing={2}>
+        <Grid item md={3}>
           <Filters/> {/*filters*/}
         </Grid>
         <Grid item md={6}>
           <JobsListComponent/> {/*list*/}
         </Grid>
-        <Grid item md={2}>
+        <Grid item md={3}>
           <ContactUs/> {/*contact*/}
         </Grid>
       </Grid>

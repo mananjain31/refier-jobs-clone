@@ -84056,26 +84056,6 @@ var ContactUs = function ContactUs() {
 
 var _default = ContactUs;
 exports.default = _default;
-},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js"}],"components/Filters/Filters.jsx":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _core = require("@material-ui/core");
-
-var _react = _interopRequireDefault(require("react"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Filters = function Filters() {
-  return /*#__PURE__*/_react.default.createElement(_core.Paper, null, "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla facere officia cumque deserunt tempore alias quos quas laboriosam, necessitatibus accusamus, sunt libero minima! Veritatis distinctio, magnam nobis odio excepturi harum.");
-};
-
-var _default = Filters;
-exports.default = _default;
 },{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
@@ -84143,7 +84123,36 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"components/JobsHeader/JobsHeader.scss":[function(require,module,exports) {
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"components/Filters/Filters.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Filters/Filters.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _core = require("@material-ui/core");
+
+var _react = _interopRequireDefault(require("react"));
+
+require("./Filters.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Filters = function Filters() {
+  return /*#__PURE__*/_react.default.createElement(_core.Paper, {
+    className: "filters"
+  }, "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta iure temporibus asperiores cumque vero, ratione laborum odio, modi laudantium delectus ex dolor magnam quisquam blanditiis maiores accusamus labore explicabo animi!");
+};
+
+var _default = Filters;
+exports.default = _default;
+},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","./Filters.scss":"components/Filters/Filters.scss"}],"components/JobsHeader/JobsHeader.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -84318,7 +84327,7 @@ var JobsHeader = function JobsHeader() {
     color: "inherit",
     className: "app-bar",
     position: "sticky"
-  }, /*#__PURE__*/_react.default.createElement(_core.Toolbar, null, /*#__PURE__*/_react.default.createElement(_core.Grid, {
+  }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_core.Grid, {
     container: true,
     justifyContent: "space-between",
     alignItems: "center"
@@ -84355,18 +84364,71 @@ require("./JobCardComponent.scss");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var LocationOnIcon = _react.default.lazy(function () {
+  return require("_bundle_loader")(require.resolve('@material-ui/icons/LocationOn'));
+});
+
+var WorkIcon = _react.default.lazy(function () {
+  return require("_bundle_loader")(require.resolve('@material-ui/icons/Work'));
+});
+
 var JobCardComponent = function JobCardComponent() {
+  var _job$tags;
+
   var job = {
-    title: "Business Development Executive (Only for Female Candidates)"
+    title: "Business Development Executive (Only for Female Candidates)",
+    company: "Easeassist",
+    location: "Remote",
+    expReq: 2,
+    tags: ['INOFFICE', 'Full-Time']
   };
-  return /*#__PURE__*/_react.default.createElement(_core.Card, null, /*#__PURE__*/_react.default.createElement(_core.Box, {
+  return /*#__PURE__*/_react.default.createElement(_core.Card, {
+    className: "card"
+  }, /*#__PURE__*/_react.default.createElement(_core.Box, {
     className: "job-header"
-  }, job.title, " ", /*#__PURE__*/_react.default.createElement(_core.Avatar, null, "A")));
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "heading"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, job.title), /*#__PURE__*/_react.default.createElement("div", {
+    className: "sub-heading"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, job.company))), /*#__PURE__*/_react.default.createElement(_core.Avatar, {
+    src: "https://i.pinimg.com/originals/ac/cc/09/accc0910c1a0b81fcfa28cf8c46c40c2.png",
+    className: "avatar"
+  })), /*#__PURE__*/_react.default.createElement(_core.Divider, null), /*#__PURE__*/_react.default.createElement(_core.Box, {
+    className: "icon-info"
+  }, /*#__PURE__*/_react.default.createElement(_react.default.Suspense, {
+    fallback: /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null)
+  }, /*#__PURE__*/_react.default.createElement(_core.Grid, {
+    container: true
+  }, /*#__PURE__*/_react.default.createElement(_core.Grid, {
+    item: true,
+    sx: 6,
+    md: 3
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "icon-text"
+  }, /*#__PURE__*/_react.default.createElement(LocationOnIcon, null), " ", /*#__PURE__*/_react.default.createElement(_core.Typography, null, job.location))), /*#__PURE__*/_react.default.createElement(_core.Grid, {
+    item: true,
+    sx: 6,
+    md: 4
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "icon-text"
+  }, /*#__PURE__*/_react.default.createElement(WorkIcon, null), "  ", /*#__PURE__*/_react.default.createElement(_core.Typography, null, job.expReq, "+ Years of experience")))))), /*#__PURE__*/_react.default.createElement(_core.Box, {
+    className: "card-content"
+  }, "Immediate Joining !! Fast Growing Business Solutions Startup is looking for passionate Female Business Development Professionals who would l..."), /*#__PURE__*/_react.default.createElement(_core.Box, {
+    className: "card-actions"
+  }, job === null || job === void 0 ? void 0 : (_job$tags = job.tags) === null || _job$tags === void 0 ? void 0 : _job$tags.slice(0, 2).map(function (tag) {
+    return /*#__PURE__*/_react.default.createElement(_core.Chip, {
+      key: tag,
+      label: /*#__PURE__*/_react.default.createElement(_core.Typography, null, tag)
+    });
+  }), /*#__PURE__*/_react.default.createElement(_core.Button, {
+    className: "apply-btn",
+    variant: "contained"
+  }, "Apply Now")));
 };
 
 var _default = JobCardComponent;
 exports.default = _default;
-},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","./JobCardComponent.scss":"components/JobCardComponent/JobCardComponent.scss"}],"components/JobsListComponent/JobListComponent.scss":[function(require,module,exports) {
+},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","./JobCardComponent.scss":"components/JobCardComponent/JobCardComponent.scss","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","@material-ui/icons/LocationOn":[["LocationOn.e473b3d1.js","../node_modules/@material-ui/icons/LocationOn.js"],"LocationOn.e473b3d1.js.map","../node_modules/@material-ui/icons/LocationOn.js"],"@material-ui/icons/Work":[["Work.0b323593.js","../node_modules/@material-ui/icons/Work.js"],"Work.0b323593.js.map","../node_modules/@material-ui/icons/Work.js"]}],"components/JobsListComponent/JobListComponent.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -84449,16 +84511,16 @@ var JobsPage = function JobsPage() {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_JobsHeader.default, null), /*#__PURE__*/_react.default.createElement("main", null, /*#__PURE__*/_react.default.createElement(_core.Grid, {
     container: true,
     justifyContent: "center",
-    spacing: 3
+    spacing: 2
   }, /*#__PURE__*/_react.default.createElement(_core.Grid, {
     item: true,
-    md: 2
+    md: 3
   }, /*#__PURE__*/_react.default.createElement(_Filters.default, null), " "), /*#__PURE__*/_react.default.createElement(_core.Grid, {
     item: true,
     md: 6
   }, /*#__PURE__*/_react.default.createElement(_JobsListComponent.default, null), " "), /*#__PURE__*/_react.default.createElement(_core.Grid, {
     item: true,
-    md: 2
+    md: 3
   }, /*#__PURE__*/_react.default.createElement(_ContactUs.default, null), " "))), /*#__PURE__*/_react.default.createElement("footer", null));
 };
 
