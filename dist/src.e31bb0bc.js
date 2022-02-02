@@ -84103,7 +84103,7 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"pages/JobsPage/components/ContactUs/ContactUs.scss":[function(require,module,exports) {
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"shared/ContactUs/ContactUs.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -84165,7 +84165,7 @@ module.exports=function(e){var t={};function r(n){if(t[n])return t[n].exports;va
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"pages/JobsPage/components/ContactUs/ContactUsForm.jsx":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"shared/ContactUs/ContactUsForm.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -84177,7 +84177,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _core = require("@material-ui/core");
 
-var _InputComponent = _interopRequireDefault(require("../../../../shared/InputComponent/InputComponent"));
+var _InputComponent = _interopRequireDefault(require("../InputComponent/InputComponent"));
 
 var _reactPhoneInput = _interopRequireDefault(require("react-phone-input-2"));
 
@@ -84261,7 +84261,7 @@ var ContactUsForm = function ContactUsForm() {
 
 var _default = ContactUsForm;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","../../../../shared/InputComponent/InputComponent":"shared/InputComponent/InputComponent.jsx","react-phone-input-2":"../node_modules/react-phone-input-2/lib/lib.js","react-phone-input-2/lib/style.css":"../node_modules/react-phone-input-2/lib/style.css","./ContactUs.scss":"pages/JobsPage/components/ContactUs/ContactUs.scss"}],"pages/JobsPage/components/ContactUs/ContactUs.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","../InputComponent/InputComponent":"shared/InputComponent/InputComponent.jsx","react-phone-input-2":"../node_modules/react-phone-input-2/lib/lib.js","react-phone-input-2/lib/style.css":"../node_modules/react-phone-input-2/lib/style.css","./ContactUs.scss":"shared/ContactUs/ContactUs.scss"}],"shared/ContactUs/ContactUs.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -84289,7 +84289,7 @@ var ContactUs = function ContactUs() {
 
 var _default = ContactUs;
 exports.default = _default;
-},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","./ContactUs.scss":"pages/JobsPage/components/ContactUs/ContactUs.scss","./ContactUsForm":"pages/JobsPage/components/ContactUs/ContactUsForm.jsx"}],"pages/JobsPage/components/Filters/Filters.scss":[function(require,module,exports) {
+},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","./ContactUs.scss":"shared/ContactUs/ContactUs.scss","./ContactUsForm":"shared/ContactUs/ContactUsForm.jsx"}],"pages/JobsPage/components/Filters/Filters.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -92289,7 +92289,7 @@ var _core = require("@material-ui/core");
 
 var _react = _interopRequireDefault(require("react"));
 
-var _ContactUs = _interopRequireDefault(require("./components/ContactUs/ContactUs"));
+var _ContactUs = _interopRequireDefault(require("../../shared/ContactUs/ContactUs"));
 
 var _Filters = _interopRequireDefault(require("./components/Filters/Filters"));
 
@@ -92326,7 +92326,7 @@ var JobsPage = function JobsPage() {
 
 var _default = JobsPage;
 exports.default = _default;
-},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","./components/ContactUs/ContactUs":"pages/JobsPage/components/ContactUs/ContactUs.jsx","./components/Filters/Filters":"pages/JobsPage/components/Filters/Filters.jsx","../../shared/PageHeader/PageHeader":"shared/PageHeader/PageHeader.jsx","./components/JobsListComponent/JobsListComponent":"pages/JobsPage/components/JobsListComponent/JobsListComponent.jsx","./index.scss":"pages/JobsPage/index.scss"}],"App.jsx":[function(require,module,exports) {
+},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","../../shared/ContactUs/ContactUs":"shared/ContactUs/ContactUs.jsx","./components/Filters/Filters":"pages/JobsPage/components/Filters/Filters.jsx","../../shared/PageHeader/PageHeader":"shared/PageHeader/PageHeader.jsx","./components/JobsListComponent/JobsListComponent":"pages/JobsPage/components/JobsListComponent/JobsListComponent.jsx","./index.scss":"pages/JobsPage/index.scss"}],"App.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

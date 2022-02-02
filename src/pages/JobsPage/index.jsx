@@ -1,6 +1,6 @@
 import { Grid, Hidden } from '@material-ui/core';
 import React from 'react';
-import ContactUs from './components/ContactUs/ContactUs';
+import ContactUs from '../../shared/ContactUs/ContactUs';
 import Filters from './components/Filters/Filters';
 import JobsHeader from '../../shared/PageHeader/PageHeader';
 import JobsListComponent from './components/JobsListComponent/JobsListComponent';
