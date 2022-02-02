@@ -1,3 +1,72 @@
+.contact-us {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contact-us .contact-us-header .MuiTypography-root {
+  font-size: medium;
+  color: teal;
+}
+.contact-us .contact-us-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contact-us .contact-us-form .submit-button {
+  color: white;
+  background-color: black;
+  box-shadow: 1px 5px 15px gray;
+}
+.input-component {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.input-component .MuiTypography-root {
+  font-weight: 600;
+  font-size: small;
+}
+.input-component input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+}
+.input-component input:focus, .input-component input:active {
+  outline: 1px solid teal;
+}
+.filters {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.filters .MuiTypography-root {
+  font-weight: 600;
+  font-size: small;
+}
+.filters .filters-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.filters .filters-header > .MuiTypography-root {
+  font-size: medium;
+}
+.filters .slider-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.switch-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.switch-container .MuiTypography-root {
+  font-weight: 600;
+}
 header .app-bar {
   background-color: #fff;
   color: darkslategray;
@@ -7,9 +76,9 @@ header .app-bar {
 header .app-bar .heading {
   font-weight: 600;
 }
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   header .app-bar {
-    padding: 0.5rem;
+    padding: 0.7rem;
   }
 }
 .card {
@@ -67,6 +136,11 @@ main {
   box-sizing: border-box;
   padding: 5.2rem;
   background-color: #e2e9ff;
+}
+@media (max-width: 1200px) {
+  main {
+    padding: 5.2rem 0.7rem;
+  }
 }
 * {
     margin : 0;

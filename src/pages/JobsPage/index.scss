@@ -1,0 +1,30 @@
+@use '../../constants/constants.scss' as *;
+
+main {
+    box-sizing: border-box;
+    padding : $desktop-padding;
+    background-color: #e2e9ff;
+
+    @media  (max-width: $lg) {
+        padding : $mobile-y-padding $mobile-x-padding;
+    }
+
+}
+
+// header{
+
+//     .app-bar{
+//         background-color: #fff;
+//         color: darkslategray;
+//         box-shadow: none;
+//         padding : 1.2rem 5.2rem;
+        
+//         .heading {
+//             font-weight: 600;
+//         }
+
+                
+
+//     }
+
+// }

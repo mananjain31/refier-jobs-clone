@@ -1,0 +1,21 @@
+.input-component {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+
+    .MuiTypography-root {
+        font-weight: 600;
+        font-size: small;
+    }
+
+    input {
+        width: 100%;
+        padding: .6rem;
+        border: 1px solid lightgray;
+        border-radius: 8px;
+
+        &:focus,&:active {
+            outline: 1px solid teal;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+@use '../../constants/constants.scss' as *;
+
+header{
+
+    .app-bar{
+        background-color: #fff;
+        color: darkslategray;
+        box-shadow: none;
+        padding : 1.2rem $desktop-padding;
+        
+        .heading {
+            font-weight: 600;
+        }
+
+                
+        @media  (max-width: $lg) {
+            padding : $mobile-x-padding;
+        }
+
+    }
+
+}

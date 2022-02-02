@@ -1,5 +1,5 @@
 import React from 'react';
-import JobsPage from './pages/JobsPage/JobsPage';
+import JobsPage from './pages/JobsPage';
 
 function App(){
     return (

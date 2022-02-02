@@ -1,0 +1,9 @@
+.switch-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .MuiTypography-root {
+        font-weight: 600;
+    }
+}
