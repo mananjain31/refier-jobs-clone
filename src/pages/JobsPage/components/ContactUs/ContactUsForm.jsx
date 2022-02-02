@@ -1,15 +1,19 @@
 import React from 'react';
 import {Button} from '@material-ui/core'
 import InputComponent from '../../../../shared/InputComponent/InputComponent';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css'
 import './ContactUs.scss'
 
 const ContactUsForm = () => {
     const [state, setState] = React.useState({
         fullName : '',
-        email : ''
+        email : '',
+        phoneNumber : '',
     });
 
     return <form className='contact-us-form'>
+
         <InputComponent 
             label={'Full Name'} 
             required 
@@ -17,6 +21,7 @@ const ContactUsForm = () => {
             value={state.fullName}
             onChange={ev=>setState(prev=>({...prev, 'fullName':ev.target.value}))}
         />
+
         <InputComponent 
             label={'Email'}    
             required 
@@ -24,6 +29,15 @@ const ContactUsForm = () => {
             value={state.email}
             onChange={ev=>setState(prev=>({...prev, 'email':ev.target.value}))}
         />
+
+        <InputComponent label={'Mobile Number'}>
+            <PhoneInput
+                country={'in'}
+                value={state.phoneNumber}
+                onChange={phone=>setState(prev=>({...prev, phoneNumber : phone}))}
+            />
+        </InputComponent>
+
         <Button className="submit-button" variant='contained'>Submit</Button>
     </form>
 };
