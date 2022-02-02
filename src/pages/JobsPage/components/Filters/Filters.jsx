@@ -1,7 +1,8 @@
-import { Hidden, Paper, Typography } from '@material-ui/core';
+import { Hidden, Modal, Paper, Typography } from '@material-ui/core';
 import React from 'react';
 import './Filters.scss';
 import FiltersContent from './FiltersContent';
+import FiltersModal from './FiltersModal';
 
 const FilterListIcon = React.lazy(()=>import('@material-ui/icons/FilterList'));
 
@@ -12,16 +13,32 @@ const FilterIcon = ()=>(
 )
 
 const Filters = () => {
+
+  const [modal, setModal] = React.useState(false);
+
+  const toggleModal = () => setModal(prev=>!prev);
+
   return <Paper className="filters">
-
-    <div className='filters-header'>
-      <FilterIcon/> <Typography>Filters</Typography>
-    </div>
-
-
+    
     <Hidden only={['sm','xs']}>
+      <div className='filters-header'>
+        <FilterIcon/> <Typography>Filters</Typography>
+      </div>
       <FiltersContent/>  
     </Hidden>
+
+    <Hidden only={['md','lg','xl']}>
+
+      <div className='filters-header'  onClick={toggleModal}>
+        <FilterIcon/> <Typography>Filters</Typography>
+      </div>
+
+      <FiltersModal
+        open={modal}
+        onClose={toggleModal}
+      />
+    </Hidden>
+
 
   </Paper>;
 };

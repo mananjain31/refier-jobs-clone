@@ -6,6 +6,10 @@
   position: sticky;
   top: 0.7rem;
 }
+.contact-us .contact-us-header {
+  display: flex;
+  justify-content: space-between;
+}
 .contact-us .contact-us-header .MuiTypography-root {
   font-weight: 600;
   font-size: medium;
@@ -21,6 +25,12 @@
   background-color: black;
   box-shadow: 1px 5px 15px gray;
   padding: 0.5rem;
+}
+
+.contact-us-modal {
+  width: fit-content;
+  margin: auto;
+  margin-top: 0.7rem;
 }
 .btn.MuiButton-root {
   font-weight: 600;
@@ -69,6 +79,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.filters-modal {
+  width: 60%;
+  margin: auto;
+  margin-top: 0.7rem;
+}
+.filters-modal .filters-modal-header {
+  display: flex;
+  justify-content: space-between;
+}
+.filters-modal .filters-modal-header .MuiTypography-root {
+  font-size: medium;
 }
 .switch-container {
   display: flex;

@@ -84299,7 +84299,90 @@ var ContactUsForm = function ContactUsForm() {
 
 var _default = ContactUsForm;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-phone-input-2":"../node_modules/react-phone-input-2/lib/lib.js","../Button/Button":"shared/Button/Button.jsx","../InputComponent/InputComponent":"shared/InputComponent/InputComponent.jsx","react-phone-input-2/lib/style.css":"../node_modules/react-phone-input-2/lib/style.css","./ContactUs.scss":"shared/ContactUs/ContactUs.scss"}],"shared/ContactUs/ContactUs.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-phone-input-2":"../node_modules/react-phone-input-2/lib/lib.js","../Button/Button":"shared/Button/Button.jsx","../InputComponent/InputComponent":"shared/InputComponent/InputComponent.jsx","react-phone-input-2/lib/style.css":"../node_modules/react-phone-input-2/lib/style.css","./ContactUs.scss":"shared/ContactUs/ContactUs.scss"}],"../node_modules/parcel-bundler/src/builtins/bundle-loader.js":[function(require,module,exports) {
+var getBundleURL = require('./bundle-url').getBundleURL;
+
+function loadBundlesLazy(bundles) {
+  if (!Array.isArray(bundles)) {
+    bundles = [bundles];
+  }
+
+  var id = bundles[bundles.length - 1];
+
+  try {
+    return Promise.resolve(require(id));
+  } catch (err) {
+    if (err.code === 'MODULE_NOT_FOUND') {
+      return new LazyPromise(function (resolve, reject) {
+        loadBundles(bundles.slice(0, -1)).then(function () {
+          return require(id);
+        }).then(resolve, reject);
+      });
+    }
+
+    throw err;
+  }
+}
+
+function loadBundles(bundles) {
+  return Promise.all(bundles.map(loadBundle));
+}
+
+var bundleLoaders = {};
+
+function registerBundleLoader(type, loader) {
+  bundleLoaders[type] = loader;
+}
+
+module.exports = exports = loadBundlesLazy;
+exports.load = loadBundles;
+exports.register = registerBundleLoader;
+var bundles = {};
+
+function loadBundle(bundle) {
+  var id;
+
+  if (Array.isArray(bundle)) {
+    id = bundle[1];
+    bundle = bundle[0];
+  }
+
+  if (bundles[bundle]) {
+    return bundles[bundle];
+  }
+
+  var type = (bundle.substring(bundle.lastIndexOf('.') + 1, bundle.length) || bundle).toLowerCase();
+  var bundleLoader = bundleLoaders[type];
+
+  if (bundleLoader) {
+    return bundles[bundle] = bundleLoader(getBundleURL() + bundle).then(function (resolved) {
+      if (resolved) {
+        module.bundle.register(id, resolved);
+      }
+
+      return resolved;
+    }).catch(function (e) {
+      delete bundles[bundle];
+      throw e;
+    });
+  }
+}
+
+function LazyPromise(executor) {
+  this.executor = executor;
+  this.promise = null;
+}
+
+LazyPromise.prototype.then = function (onSuccess, onError) {
+  if (this.promise === null) this.promise = new Promise(this.executor);
+  return this.promise.then(onSuccess, onError);
+};
+
+LazyPromise.prototype.catch = function (onError) {
+  if (this.promise === null) this.promise = new Promise(this.executor);
+  return this.promise.catch(onError);
+};
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"shared/ContactUs/ContactUs.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -84317,17 +84400,29 @@ var _ContactUsForm = _interopRequireDefault(require("./ContactUsForm"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var ContactUs = function ContactUs() {
+var Close = _react.default.lazy(function () {
+  return require("_bundle_loader")(require.resolve('@material-ui/icons/Close'));
+});
+
+var CloseIcon = function CloseIcon() {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Suspense, {
+    fallback: /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "...")
+  }, /*#__PURE__*/_react.default.createElement(Close, null));
+};
+
+var ContactUs = function ContactUs(props) {
   return /*#__PURE__*/_react.default.createElement(_core.Paper, {
     className: "contact-us"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "contact-us-header"
-  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Confused?", /*#__PURE__*/_react.default.createElement("br", null), "We can help you")), /*#__PURE__*/_react.default.createElement(_core.Divider, null), /*#__PURE__*/_react.default.createElement(_ContactUsForm.default, null));
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Confused?", /*#__PURE__*/_react.default.createElement("br", null), "We can help you"), props.isModal && /*#__PURE__*/_react.default.createElement(_core.IconButton, {
+    onClick: props.onClose
+  }, /*#__PURE__*/_react.default.createElement(CloseIcon, null))), /*#__PURE__*/_react.default.createElement(_core.Divider, null), /*#__PURE__*/_react.default.createElement(_ContactUsForm.default, null));
 };
 
 var _default = ContactUs;
 exports.default = _default;
-},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","./ContactUs.scss":"shared/ContactUs/ContactUs.scss","./ContactUsForm":"shared/ContactUs/ContactUsForm.jsx"}],"pages/JobsPage/components/Filters/Filters.scss":[function(require,module,exports) {
+},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","./ContactUs.scss":"shared/ContactUs/ContactUs.scss","./ContactUsForm":"shared/ContactUs/ContactUsForm.jsx","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","@material-ui/icons/Close":[["Close.11654daf.js","../node_modules/@material-ui/icons/Close.js"],"Close.11654daf.js.map","../node_modules/@material-ui/icons/Close.js"]}],"pages/JobsPage/components/Filters/Filters.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -91944,90 +92039,7 @@ var FiltersContent = function FiltersContent() {
 
 var _default = FiltersContent;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../../../../shared/MultiSelect/MultiSelect":"shared/MultiSelect/MultiSelect.jsx","../../../../shared/Switcher/Switcher":"shared/Switcher/Switcher.jsx","@material-ui/core":"../node_modules/@material-ui/core/esm/index.js"}],"../node_modules/parcel-bundler/src/builtins/bundle-loader.js":[function(require,module,exports) {
-var getBundleURL = require('./bundle-url').getBundleURL;
-
-function loadBundlesLazy(bundles) {
-  if (!Array.isArray(bundles)) {
-    bundles = [bundles];
-  }
-
-  var id = bundles[bundles.length - 1];
-
-  try {
-    return Promise.resolve(require(id));
-  } catch (err) {
-    if (err.code === 'MODULE_NOT_FOUND') {
-      return new LazyPromise(function (resolve, reject) {
-        loadBundles(bundles.slice(0, -1)).then(function () {
-          return require(id);
-        }).then(resolve, reject);
-      });
-    }
-
-    throw err;
-  }
-}
-
-function loadBundles(bundles) {
-  return Promise.all(bundles.map(loadBundle));
-}
-
-var bundleLoaders = {};
-
-function registerBundleLoader(type, loader) {
-  bundleLoaders[type] = loader;
-}
-
-module.exports = exports = loadBundlesLazy;
-exports.load = loadBundles;
-exports.register = registerBundleLoader;
-var bundles = {};
-
-function loadBundle(bundle) {
-  var id;
-
-  if (Array.isArray(bundle)) {
-    id = bundle[1];
-    bundle = bundle[0];
-  }
-
-  if (bundles[bundle]) {
-    return bundles[bundle];
-  }
-
-  var type = (bundle.substring(bundle.lastIndexOf('.') + 1, bundle.length) || bundle).toLowerCase();
-  var bundleLoader = bundleLoaders[type];
-
-  if (bundleLoader) {
-    return bundles[bundle] = bundleLoader(getBundleURL() + bundle).then(function (resolved) {
-      if (resolved) {
-        module.bundle.register(id, resolved);
-      }
-
-      return resolved;
-    }).catch(function (e) {
-      delete bundles[bundle];
-      throw e;
-    });
-  }
-}
-
-function LazyPromise(executor) {
-  this.executor = executor;
-  this.promise = null;
-}
-
-LazyPromise.prototype.then = function (onSuccess, onError) {
-  if (this.promise === null) this.promise = new Promise(this.executor);
-  return this.promise.then(onSuccess, onError);
-};
-
-LazyPromise.prototype.catch = function (onError) {
-  if (this.promise === null) this.promise = new Promise(this.executor);
-  return this.promise.catch(onError);
-};
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"pages/JobsPage/components/Filters/Filters.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../../../../shared/MultiSelect/MultiSelect":"shared/MultiSelect/MultiSelect.jsx","../../../../shared/Switcher/Switcher":"shared/Switcher/Switcher.jsx","@material-ui/core":"../node_modules/@material-ui/core/esm/index.js"}],"pages/JobsPage/components/Filters/FiltersModal.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -92055,24 +92067,141 @@ var FilterIcon = function FilterIcon() {
   }, /*#__PURE__*/_react.default.createElement(FilterListIcon, null));
 };
 
-var Filters = function Filters() {
-  return /*#__PURE__*/_react.default.createElement(_core.Paper, {
+var Close = _react.default.lazy(function () {
+  return require("_bundle_loader")(require.resolve('@material-ui/icons/Close'));
+});
+
+var CloseIcon = function CloseIcon() {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Suspense, {
+    fallback: /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "...")
+  }, /*#__PURE__*/_react.default.createElement(Close, null));
+};
+
+var FiltersModal = function FiltersModal(props) {
+  return /*#__PURE__*/_react.default.createElement(_core.Modal, props, /*#__PURE__*/_react.default.createElement(_core.Box, {
+    className: "filters-modal"
+  }, /*#__PURE__*/_react.default.createElement(_core.Paper, {
     className: "filters"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "filters-header"
-  }, /*#__PURE__*/_react.default.createElement(FilterIcon, null), " ", /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Filters")), /*#__PURE__*/_react.default.createElement(_core.Hidden, {
+    className: "filters-modal-header"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Filters"), " ", /*#__PURE__*/_react.default.createElement(_core.IconButton, {
+    onClick: props.onClose
+  }, /*#__PURE__*/_react.default.createElement(CloseIcon, null))), /*#__PURE__*/_react.default.createElement("hr", null), /*#__PURE__*/_react.default.createElement(_FiltersContent.default, null))));
+};
+
+var _default = FiltersModal;
+exports.default = _default;
+},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","./Filters.scss":"pages/JobsPage/components/Filters/Filters.scss","./FiltersContent":"pages/JobsPage/components/Filters/FiltersContent.jsx","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","@material-ui/icons/FilterList":[["FilterList.fd35945f.js","../node_modules/@material-ui/icons/FilterList.js"],"FilterList.fd35945f.js.map","../node_modules/@material-ui/icons/FilterList.js"],"@material-ui/icons/Close":[["Close.11654daf.js","../node_modules/@material-ui/icons/Close.js"],"Close.11654daf.js.map","../node_modules/@material-ui/icons/Close.js"]}],"pages/JobsPage/components/Filters/Filters.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _core = require("@material-ui/core");
+
+var _react = _interopRequireDefault(require("react"));
+
+require("./Filters.scss");
+
+var _FiltersContent = _interopRequireDefault(require("./FiltersContent"));
+
+var _FiltersModal = _interopRequireDefault(require("./FiltersModal"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var FilterListIcon = _react.default.lazy(function () {
+  return require("_bundle_loader")(require.resolve('@material-ui/icons/FilterList'));
+});
+
+var FilterIcon = function FilterIcon() {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Suspense, {
+    fallback: /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "...")
+  }, /*#__PURE__*/_react.default.createElement(FilterListIcon, null));
+};
+
+var Filters = function Filters() {
+  var _React$useState = _react.default.useState(false),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      modal = _React$useState2[0],
+      setModal = _React$useState2[1];
+
+  var toggleModal = function toggleModal() {
+    return setModal(function (prev) {
+      return !prev;
+    });
+  };
+
+  return /*#__PURE__*/_react.default.createElement(_core.Paper, {
+    className: "filters"
+  }, /*#__PURE__*/_react.default.createElement(_core.Hidden, {
     only: ['sm', 'xs']
-  }, /*#__PURE__*/_react.default.createElement(_FiltersContent.default, null)));
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "filters-header"
+  }, /*#__PURE__*/_react.default.createElement(FilterIcon, null), " ", /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Filters")), /*#__PURE__*/_react.default.createElement(_FiltersContent.default, null)), /*#__PURE__*/_react.default.createElement(_core.Hidden, {
+    only: ['md', 'lg', 'xl']
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "filters-header",
+    onClick: toggleModal
+  }, /*#__PURE__*/_react.default.createElement(FilterIcon, null), " ", /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Filters")), /*#__PURE__*/_react.default.createElement(_FiltersModal.default, {
+    open: modal,
+    onClose: toggleModal
+  })));
 };
 
 var _default = Filters;
 exports.default = _default;
-},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","./Filters.scss":"pages/JobsPage/components/Filters/Filters.scss","./FiltersContent":"pages/JobsPage/components/Filters/FiltersContent.jsx","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","@material-ui/icons/FilterList":[["FilterList.fd35945f.js","../node_modules/@material-ui/icons/FilterList.js"],"FilterList.fd35945f.js.map","../node_modules/@material-ui/icons/FilterList.js"]}],"shared/PageHeader/PageHeader.scss":[function(require,module,exports) {
+},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","./Filters.scss":"pages/JobsPage/components/Filters/Filters.scss","./FiltersContent":"pages/JobsPage/components/Filters/FiltersContent.jsx","./FiltersModal":"pages/JobsPage/components/Filters/FiltersModal.jsx","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","@material-ui/icons/FilterList":[["FilterList.fd35945f.js","../node_modules/@material-ui/icons/FilterList.js"],"FilterList.fd35945f.js.map","../node_modules/@material-ui/icons/FilterList.js"]}],"shared/PageHeader/PageHeader.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"shared/Navigations/Navigations.scss":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"shared/ContactUs/ContactUsModal.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _core = require("@material-ui/core");
+
+var _react = _interopRequireDefault(require("react"));
+
+var _ContactUs = _interopRequireDefault(require("./ContactUs"));
+
+require("./ContactUs.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ContactUsModal = function ContactUsModal(props) {
+  return /*#__PURE__*/_react.default.createElement(_core.Modal, {
+    open: props.open,
+    onClose: props.onClose
+  }, /*#__PURE__*/_react.default.createElement(_core.Box, {
+    className: "contact-us-modal"
+  }, /*#__PURE__*/_react.default.createElement(_ContactUs.default, {
+    isModal: true,
+    onClose: props.onClose
+  })));
+};
+
+var _default = ContactUsModal;
+exports.default = _default;
+},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","./ContactUs":"shared/ContactUs/ContactUs.jsx","./ContactUs.scss":"shared/ContactUs/ContactUs.scss"}],"shared/Navigations/Navigations.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -92091,9 +92220,23 @@ var _core = require("@material-ui/core");
 
 var _Button = _interopRequireDefault(require("../Button/Button"));
 
+var _ContactUsModal = _interopRequireDefault(require("../ContactUs/ContactUsModal"));
+
 require("./Navigations.scss");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var MenuIcon = _react.default.lazy(function () {
   return require("_bundle_loader")(require.resolve('@material-ui/icons/Menu'));
@@ -92104,6 +92247,17 @@ var ArrowDropDownIcon = _react.default.lazy(function () {
 });
 
 var Navigations = function Navigations() {
+  var _React$useState = _react.default.useState(false),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      contactUsModal = _React$useState2[0],
+      setContactUsModal = _React$useState2[1];
+
+  var toggleContactUsModal = function toggleContactUsModal() {
+    return setContactUsModal(function (prev) {
+      return !prev;
+    });
+  };
+
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_react.default.Suspense, {
     fallback: /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null)
   }, /*#__PURE__*/_react.default.createElement(_core.Grid, {
@@ -92115,7 +92269,12 @@ var Navigations = function Navigations() {
     smDown: true
   }, /*#__PURE__*/_react.default.createElement(_core.Grid, {
     item: true
-  }, /*#__PURE__*/_react.default.createElement(_Button.default, null, "Contact Us")), /*#__PURE__*/_react.default.createElement(_core.Grid, {
+  }, /*#__PURE__*/_react.default.createElement(_Button.default, {
+    onClick: toggleContactUsModal
+  }, "Contact Us"), /*#__PURE__*/_react.default.createElement(_ContactUsModal.default, {
+    open: contactUsModal,
+    onClose: toggleContactUsModal
+  })), /*#__PURE__*/_react.default.createElement(_core.Grid, {
     item: true
   }, /*#__PURE__*/_react.default.createElement(_Button.default, {
     endIcon: /*#__PURE__*/_react.default.createElement(ArrowDropDownIcon, null)
@@ -92145,7 +92304,7 @@ var Navigations = function Navigations() {
 
 var _default = Navigations;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","../Button/Button":"shared/Button/Button.jsx","./Navigations.scss":"shared/Navigations/Navigations.scss","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","@material-ui/icons/Menu":[["Menu.4143c7d8.js","../node_modules/@material-ui/icons/Menu.js"],"Menu.4143c7d8.js.map","../node_modules/@material-ui/icons/Menu.js"],"@material-ui/icons/ArrowDropDown":[["ArrowDropDown.6686fa42.js","../node_modules/@material-ui/icons/ArrowDropDown.js"],"ArrowDropDown.6686fa42.js.map","../node_modules/@material-ui/icons/ArrowDropDown.js"]}],"shared/PageHeader/PageHeader.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","../Button/Button":"shared/Button/Button.jsx","../ContactUs/ContactUsModal":"shared/ContactUs/ContactUsModal.jsx","./Navigations.scss":"shared/Navigations/Navigations.scss","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","@material-ui/icons/Menu":[["Menu.4143c7d8.js","../node_modules/@material-ui/icons/Menu.js"],"Menu.4143c7d8.js.map","../node_modules/@material-ui/icons/Menu.js"],"@material-ui/icons/ArrowDropDown":[["ArrowDropDown.6686fa42.js","../node_modules/@material-ui/icons/ArrowDropDown.js"],"ArrowDropDown.6686fa42.js.map","../node_modules/@material-ui/icons/ArrowDropDown.js"]}],"shared/PageHeader/PageHeader.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -92520,7 +92679,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63269" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58113" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

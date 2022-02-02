@@ -30,3 +30,17 @@
     }
 
 }
+
+.filters-modal {
+    width: 60%;
+    margin: auto;
+    margin-top: $mobile-x-padding;
+    .filters-modal-header{
+        display: flex;
+        justify-content: space-between;
+    
+        .MuiTypography-root {
+            font-size: medium;
+        }
+    }
+}

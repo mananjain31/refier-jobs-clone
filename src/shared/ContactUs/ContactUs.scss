@@ -9,6 +9,9 @@
     top: $mobile-x-padding;
     
     .contact-us-header {
+        display: flex;
+        justify-content: space-between;
+        
         .MuiTypography-root {
             font-weight: 600;
             font-size: medium;
@@ -28,7 +31,9 @@
             padding: .5rem;
         }
     }
-
-    
-
+}
+.contact-us-modal {
+    width: fit-content;
+    margin: auto;
+    margin-top: $mobile-x-padding;
 }

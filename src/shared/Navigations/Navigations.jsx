@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Hidden, makeStyles } from '@material-ui/core';
 import Button from '../Button/Button'
+import ContactUsModal from '../ContactUs/ContactUsModal'
 import './Navigations.scss'
 
 const MenuIcon = React.lazy(()=>import('@material-ui/icons/Menu'));
@@ -8,14 +9,21 @@ const ArrowDropDownIcon = React.lazy(()=>import('@material-ui/icons/ArrowDropDow
 
 
 const Navigations = () => {
-
+    const [contactUsModal, setContactUsModal] = React.useState(false);
+    const toggleContactUsModal=()=>setContactUsModal(prev=>!prev);
   return <>
     <React.Suspense fallback={<></>}>
       <Grid container spacing={5} alignItems='center' className='navigations'>
         <Hidden smDown>
             <Grid item>
-                <Button>Contact Us</Button>
-                </Grid>
+                <Button
+                    onClick={toggleContactUsModal}
+                >Contact Us</Button>
+                <ContactUsModal
+                    open={contactUsModal}
+                    onClose={toggleContactUsModal}
+                />
+            </Grid>
             <Grid item>
                 <Button
                     endIcon={<ArrowDropDownIcon/>}
