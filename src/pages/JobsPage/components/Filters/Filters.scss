@@ -1,4 +1,8 @@
+@use '../../../../constants/constants.scss' as *;
+
 .filters {
+    position: sticky;
+    top: $mobile-x-padding;
     padding: 1rem;
     display: flex;
     flex-direction: column;
