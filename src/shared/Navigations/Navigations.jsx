@@ -1,6 +1,7 @@
 import React from 'react';
-import { Button, Grid, Hidden, makeStyles } from '@material-ui/core';
-// import styles from './NavigationsStyles'
+import { Grid, Hidden, makeStyles } from '@material-ui/core';
+import Button from '../Button/Button'
+import './Navigations.scss'
 
 const MenuIcon = React.lazy(()=>import('@material-ui/icons/Menu'));
 const ArrowDropDownIcon = React.lazy(()=>import('@material-ui/icons/ArrowDropDown'));
@@ -10,7 +11,7 @@ const Navigations = () => {
 
   return <>
     <React.Suspense fallback={<></>}>
-      <Grid container spacing={5} alignItems='center'>
+      <Grid container spacing={5} alignItems='center' className='navigations'>
         <Hidden smDown>
             <Grid item>
                 <Button>Contact Us</Button>

@@ -1,7 +1,7 @@
 import React from 'react';
-import {Button} from '@material-ui/core'
-import InputComponent from '../InputComponent/InputComponent';
 import PhoneInput from 'react-phone-input-2';
+import Button from '../Button/Button'
+import InputComponent from '../InputComponent/InputComponent';
 import 'react-phone-input-2/lib/style.css'
 import './ContactUs.scss'
 

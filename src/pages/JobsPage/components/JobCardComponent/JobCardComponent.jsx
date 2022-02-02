@@ -1,4 +1,5 @@
-import { Avatar, Box, Button, Card, CardActions, Chip, Divider, Grid, Typography } from '@material-ui/core';
+import { Avatar, Box, Card, CardActions, Chip, Divider, Grid, Typography } from '@material-ui/core';
+import Button from '../../../../shared/Button/Button'
 import React from 'react';
 import './JobCardComponent.scss'
 
