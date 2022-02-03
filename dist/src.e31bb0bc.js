@@ -92405,12 +92405,101 @@ var LoginModal = function LoginModal(props) {
 
 var _default = LoginModal;
 exports.default = _default;
-},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","./Login.scss":"shared/Login/Login.scss","./LoginForm":"shared/Login/LoginForm.jsx"}],"shared/Navigations/Navigations.scss":[function(require,module,exports) {
+},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","./Login.scss":"shared/Login/Login.scss","./LoginForm":"shared/Login/LoginForm.jsx"}],"shared/DropdownMenu/DropdownMenu.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _core = require("@material-ui/core");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var DropdownMenu = function DropdownMenu(_ref) {
+  var items = _ref.items,
+      anchorEl = _ref.anchorEl,
+      onClose = _ref.onClose;
+  return /*#__PURE__*/_react.default.createElement(_core.Menu, {
+    open: !!anchorEl,
+    anchorEl: anchorEl,
+    onClose: onClose,
+    getContentAnchorEl: null,
+    anchorOrigin: {
+      vertical: 'bottom',
+      horizontal: 'left'
+    },
+    transformOrigin: {
+      vertical: 'top',
+      horizontal: 'left'
+    }
+  }, items.map(function (item) {
+    return /*#__PURE__*/_react.default.createElement(_core.MenuItem, {
+      key: item,
+      onClick: onClose
+    }, item);
+  }));
+};
+
+var _default = DropdownMenu;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","@material-ui/core":"../node_modules/@material-ui/core/esm/index.js"}],"shared/Navigations/Navigations.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"shared/Navigations/Navigations.jsx":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"shared/DrawerComponent/DrawerComponent.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _core = require("@material-ui/core");
+
+var _react = _interopRequireDefault(require("react"));
+
+var _Button = _interopRequireDefault(require("../Button/Button"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Close = _react.default.lazy(function () {
+  return require("_bundle_loader")(require.resolve('@material-ui/icons/Close'));
+});
+
+var CloseIcon = function CloseIcon() {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Suspense, {
+    fallback: /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "...")
+  }, /*#__PURE__*/_react.default.createElement(Close, null));
+};
+
+var DrawerComponent = function DrawerComponent(props) {
+  var _props$items;
+
+  return /*#__PURE__*/_react.default.createElement(_core.Drawer, {
+    anchor: props.anchor ? props.anchor : 'right',
+    open: props.open,
+    onClose: props.onClose
+  }, /*#__PURE__*/_react.default.createElement(_core.List, null, /*#__PURE__*/_react.default.createElement(_core.ListItem, null, /*#__PURE__*/_react.default.createElement(_core.IconButton, {
+    onClick: props.onClose,
+    style: {
+      marginLeft: 'auto'
+    }
+  }, /*#__PURE__*/_react.default.createElement(CloseIcon, null))), (_props$items = props.items) === null || _props$items === void 0 ? void 0 : _props$items.map(function (item) {
+    return /*#__PURE__*/_react.default.createElement(_core.ListItem, {
+      key: item,
+      onClick: props.onClose
+    }, /*#__PURE__*/_react.default.createElement(_Button.default, null, item));
+  })));
+};
+
+var _default = DrawerComponent;
+exports.default = _default;
+},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","../Button/Button":"shared/Button/Button.jsx","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","@material-ui/icons/Close":[["Close.11654daf.js","../node_modules/@material-ui/icons/Close.js"],"Close.11654daf.js.map","../node_modules/@material-ui/icons/Close.js"]}],"shared/Navigations/Navigations.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -92428,7 +92517,11 @@ var _ContactUsModal = _interopRequireDefault(require("../ContactUs/ContactUsModa
 
 var _LoginModal = _interopRequireDefault(require("../Login/LoginModal"));
 
+var _DropdownMenu = _interopRequireDefault(require("../DropdownMenu/DropdownMenu"));
+
 require("./Navigations.scss");
+
+var _DrawerComponent = _interopRequireDefault(require("../DrawerComponent/DrawerComponent"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -92463,6 +92556,28 @@ var Navigations = function Navigations() {
       loginModal = _React$useState4[0],
       setLoginModal = _React$useState4[1];
 
+  var _React$useState5 = _react.default.useState(null),
+      _React$useState6 = _slicedToArray(_React$useState5, 2),
+      mpAnchor = _React$useState6[0],
+      setMpAnchor = _React$useState6[1];
+
+  var _React$useState7 = _react.default.useState(false),
+      _React$useState8 = _slicedToArray(_React$useState7, 2),
+      drawer = _React$useState8[0],
+      setDrawer = _React$useState8[1];
+
+  var toggleDrawer = function toggleDrawer(ev) {
+    return setDrawer(function (prev) {
+      return !prev;
+    });
+  };
+
+  var toggleMpAnchor = function toggleMpAnchor(ev) {
+    return setMpAnchor(function (prev) {
+      return prev === null ? ev.currentTarget : null;
+    });
+  };
+
   var toggleContactUsModal = function toggleContactUsModal() {
     return setContactUsModal(function (prev) {
       return !prev;
@@ -92491,8 +92606,13 @@ var Navigations = function Navigations() {
   }, "Contact Us")), /*#__PURE__*/_react.default.createElement(_core.Grid, {
     item: true
   }, /*#__PURE__*/_react.default.createElement(_Button.default, {
-    endIcon: /*#__PURE__*/_react.default.createElement(ArrowDropDownIcon, null)
-  }, "Marketplace")), /*#__PURE__*/_react.default.createElement(_core.Grid, {
+    endIcon: /*#__PURE__*/_react.default.createElement(ArrowDropDownIcon, null),
+    onClick: toggleMpAnchor
+  }, "Marketplace"), /*#__PURE__*/_react.default.createElement(_DropdownMenu.default, {
+    anchorEl: mpAnchor,
+    items: ['MarketPlace', 'Cohort', 'Courses', 'Webinars'],
+    onClose: toggleMpAnchor
+  })), /*#__PURE__*/_react.default.createElement(_core.Grid, {
     item: true
   }, /*#__PURE__*/_react.default.createElement(_Button.default, null, "Jobs"))), /*#__PURE__*/_react.default.createElement(_core.Grid, {
     item: true
@@ -92515,7 +92635,13 @@ var Navigations = function Navigations() {
     mdUp: true
   }, /*#__PURE__*/_react.default.createElement(_core.Grid, {
     item: true
-  }, /*#__PURE__*/_react.default.createElement(MenuIcon, null))))), /*#__PURE__*/_react.default.createElement(_ContactUsModal.default, {
+  }, /*#__PURE__*/_react.default.createElement(_core.IconButton, {
+    onClick: toggleDrawer
+  }, /*#__PURE__*/_react.default.createElement(MenuIcon, null)))))), /*#__PURE__*/_react.default.createElement(_DrawerComponent.default, {
+    open: drawer,
+    onClose: toggleDrawer,
+    items: ['MarketPlace', 'DrawerItem 2', 'DrawerItem 3']
+  }), /*#__PURE__*/_react.default.createElement(_ContactUsModal.default, {
     open: contactUsModal,
     onClose: toggleContactUsModal
   }), /*#__PURE__*/_react.default.createElement(_LoginModal.default, {
@@ -92526,7 +92652,7 @@ var Navigations = function Navigations() {
 
 var _default = Navigations;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","../Button/Button":"shared/Button/Button.jsx","../ContactUs/ContactUsModal":"shared/ContactUs/ContactUsModal.jsx","../Login/LoginModal":"shared/Login/LoginModal.jsx","./Navigations.scss":"shared/Navigations/Navigations.scss","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","@material-ui/icons/Menu":[["Menu.4143c7d8.js","../node_modules/@material-ui/icons/Menu.js"],"Menu.4143c7d8.js.map","../node_modules/@material-ui/icons/Menu.js"],"@material-ui/icons/ArrowDropDown":[["ArrowDropDown.6686fa42.js","../node_modules/@material-ui/icons/ArrowDropDown.js"],"ArrowDropDown.6686fa42.js.map","../node_modules/@material-ui/icons/ArrowDropDown.js"]}],"shared/PageHeader/PageHeader.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","../Button/Button":"shared/Button/Button.jsx","../ContactUs/ContactUsModal":"shared/ContactUs/ContactUsModal.jsx","../Login/LoginModal":"shared/Login/LoginModal.jsx","../DropdownMenu/DropdownMenu":"shared/DropdownMenu/DropdownMenu.jsx","./Navigations.scss":"shared/Navigations/Navigations.scss","../DrawerComponent/DrawerComponent":"shared/DrawerComponent/DrawerComponent.jsx","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","@material-ui/icons/Menu":[["Menu.4143c7d8.js","../node_modules/@material-ui/icons/Menu.js"],"Menu.4143c7d8.js.map","../node_modules/@material-ui/icons/Menu.js"],"@material-ui/icons/ArrowDropDown":[["ArrowDropDown.6686fa42.js","../node_modules/@material-ui/icons/ArrowDropDown.js"],"ArrowDropDown.6686fa42.js.map","../node_modules/@material-ui/icons/ArrowDropDown.js"]}],"shared/PageHeader/PageHeader.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -92901,7 +93027,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58397" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54596" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
