@@ -23,6 +23,8 @@
 }
 .contact-us .contact-us-form .phone-input {
   box-sizing: border-box;
+}
+.contact-us .contact-us-form .react-tel-input .form-control {
   width: 100%;
 }
 .contact-us .contact-us-form .submit-button {
@@ -229,6 +231,44 @@ main {
   main {
     padding: 5.2rem 0.7rem;
   }
+}
+footer {
+  background-color: black;
+  color: white;
+  width: 100%;
+  padding: 0.7rem 5.2rem 0.7rem 5.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+footer .footer1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+footer .footer1 .items {
+  margin-top: 0.5rem;
+}
+footer .footer1 .items .item {
+  margin-top: 0.2rem;
+}
+footer .footer2 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+footer .footer2 .items {
+  display: flex;
+}
+footer .footer2 .items .item {
+  padding: 0 3rem;
+}
+footer .footer2 .items .item.border {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
 }
 * {
     margin : 0;

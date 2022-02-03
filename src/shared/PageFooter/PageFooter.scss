@@ -1,0 +1,47 @@
+@use '../../constants/constants.scss' as *;
+
+footer {
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding: $mobile-x-padding $mobile-y-padding $mobile-x-padding $mobile-y-padding ;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .footer1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+
+        .items {
+            margin-top: .5rem;
+            .item {
+                margin-top: .2rem;
+            }
+        }
+    }
+
+    .footer2 {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem;
+
+        .items {
+            display: flex;
+            
+            .item {
+                padding: 0 3rem;
+
+                &.border {
+                    border-left: 1px solid white;
+                    border-right: 1px solid white;
+                }
+            }
+
+        }
+    }
+}

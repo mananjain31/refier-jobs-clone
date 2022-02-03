@@ -92834,7 +92834,12 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"shared/FooterComponent/FooterComponent.jsx":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"shared/PageFooter/PageFooter.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"shared/PageFooter/PageFooter.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -92842,19 +92847,127 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _core = require("@material-ui/core");
+
 var _react = _interopRequireDefault(require("react"));
+
+require("./PageFooter.scss");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var FooterComponent = function FooterComponent() {
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "footer"
-  });
+var PageFooter = function PageFooter() {
+  return /*#__PURE__*/_react.default.createElement("footer", null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "footer1"
+  }, /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "header"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, {
+    variant: "h5"
+  }, "Discover")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "items"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Jobs")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Jobseeker")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "College")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Enterprise")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Blog")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "ISA")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Newsletter")))), /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "header"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, {
+    variant: "h5"
+  }, "Discover")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "items"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Jobs")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Jobseeker")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "College")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Enterprise")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Blog")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "ISA")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Newsletter")))), /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "header"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, {
+    variant: "h5"
+  }, "Discover")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "items"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Jobs")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Jobseeker")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "College")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Enterprise")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Blog")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "ISA")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Newsletter")))), /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "header"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, {
+    variant: "h5"
+  }, "Company")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "items"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Jobs")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Jobseeker")))), /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "header"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, {
+    variant: "h5"
+  }, "Company")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "items"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Jobs")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Jobseeker")))), /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "header"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, {
+    variant: "h5"
+  }, "Contact")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "items"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Jobs")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Jobseeker"))))), /*#__PURE__*/_react.default.createElement("hr", null), /*#__PURE__*/_react.default.createElement("div", {
+    className: "footer2"
+  }, /*#__PURE__*/_react.default.createElement("div", null, "Clone by ", /*#__PURE__*/_react.default.createElement("a", {
+    href: "https://github.com/mananjain31"
+  }, "https://github.com/mananjain31"), ", original website : ", /*#__PURE__*/_react.default.createElement("a", {
+    href: "https://refier.com/jobs/"
+  }, "https://refier.com/jobs/")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "items"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, "Privacy Policy"), /*#__PURE__*/_react.default.createElement("div", {
+    className: "item border"
+  }, "Terms"), /*#__PURE__*/_react.default.createElement("div", {
+    className: "item"
+  }, "Sitemap"))));
 };
 
-var _default = FooterComponent;
+var _default = PageFooter;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"pages/JobsPage/index.jsx":[function(require,module,exports) {
+},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","./PageFooter.scss":"shared/PageFooter/PageFooter.scss"}],"pages/JobsPage/index.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -92876,7 +92989,7 @@ var _JobsListComponent = _interopRequireDefault(require("./components/JobsListCo
 
 require("./index.scss");
 
-var _FooterComponent = _interopRequireDefault(require("../../shared/FooterComponent/FooterComponent"));
+var _PageFooter = _interopRequireDefault(require("../../shared/PageFooter/PageFooter"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -92900,12 +93013,12 @@ var JobsPage = function JobsPage() {
     item: true,
     md: 3,
     lg: 3
-  }, /*#__PURE__*/_react.default.createElement(_ContactUs.default, null), " ")))), /*#__PURE__*/_react.default.createElement(_FooterComponent.default, null));
+  }, /*#__PURE__*/_react.default.createElement(_ContactUs.default, null), " ")))), /*#__PURE__*/_react.default.createElement(_PageFooter.default, null));
 };
 
 var _default = JobsPage;
 exports.default = _default;
-},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","../../shared/ContactUs/ContactUs":"shared/ContactUs/ContactUs.jsx","./components/Filters/Filters":"pages/JobsPage/components/Filters/Filters.jsx","../../shared/PageHeader/PageHeader":"shared/PageHeader/PageHeader.jsx","./components/JobsListComponent/JobsListComponent":"pages/JobsPage/components/JobsListComponent/JobsListComponent.jsx","./index.scss":"pages/JobsPage/index.scss","../../shared/FooterComponent/FooterComponent":"shared/FooterComponent/FooterComponent.jsx"}],"App.jsx":[function(require,module,exports) {
+},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","../../shared/ContactUs/ContactUs":"shared/ContactUs/ContactUs.jsx","./components/Filters/Filters":"pages/JobsPage/components/Filters/Filters.jsx","../../shared/PageHeader/PageHeader":"shared/PageHeader/PageHeader.jsx","./components/JobsListComponent/JobsListComponent":"pages/JobsPage/components/JobsListComponent/JobsListComponent.jsx","./index.scss":"pages/JobsPage/index.scss","../../shared/PageFooter/PageFooter":"shared/PageFooter/PageFooter.jsx"}],"App.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -93050,7 +93163,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51761" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64382" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
