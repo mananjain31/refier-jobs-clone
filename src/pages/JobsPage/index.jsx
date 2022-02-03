@@ -5,7 +5,7 @@ import Filters from './components/Filters/Filters';
 import JobsHeader from '../../shared/PageHeader/PageHeader';
 import JobsListComponent from './components/JobsListComponent/JobsListComponent';
 import './index.scss'
-import FooterComponent from '../../shared/PageFooter/PageFooter';
+import PageFooter from '../../shared/PageFooter/PageFooter';
 
 const JobsPage = () => {
   return <>
@@ -31,7 +31,7 @@ const JobsPage = () => {
       </Grid>
     </main>
 
-    {/* <FooterComponent/> */}
+    <PageFooter/>
   </>
 };
 

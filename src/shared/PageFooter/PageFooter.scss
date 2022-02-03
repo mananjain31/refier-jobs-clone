@@ -34,7 +34,7 @@ footer {
             display: flex;
             
             .item {
-                padding: 0 3rem;
+                // padding: 0 3rem; -- buggy in mobile
 
                 &.border {
                     border-left: 1px solid white;

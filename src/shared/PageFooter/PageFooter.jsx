@@ -4,7 +4,9 @@ import './PageFooter.scss'
 
 const PageFooter = () => {
   return <footer>
+
     <div className="footer1">
+
       <section>
         <div className="header"><Typography variant='h5'>Discover</Typography></div>
         <div className="items">
@@ -17,6 +19,7 @@ const PageFooter = () => {
           <div className="item"><Typography>Newsletter</Typography></div>
         </div>
       </section>
+
       <section>
         <div className="header"><Typography variant='h5'>Discover</Typography></div>
         <div className="items">
@@ -29,6 +32,7 @@ const PageFooter = () => {
           <div className="item"><Typography>Newsletter</Typography></div>
         </div>
       </section>
+
       <section>
         <div className="header"><Typography variant='h5'>Discover</Typography></div>
         <div className="items">
@@ -41,6 +45,7 @@ const PageFooter = () => {
           <div className="item"><Typography>Newsletter</Typography></div>
         </div>
       </section>
+
       <section>
         <div className="header"><Typography variant='h5'>Company</Typography></div>
         <div className="items">
@@ -48,6 +53,7 @@ const PageFooter = () => {
           <div className="item"><Typography>Jobseeker</Typography></div>
         </div>
       </section>
+
       <section>
         <div className="header"><Typography variant='h5'>Company</Typography></div>
         <div className="items">
@@ -55,6 +61,7 @@ const PageFooter = () => {
           <div className="item"><Typography>Jobseeker</Typography></div>
         </div>
       </section>
+
       <section>
         <div className="header"><Typography variant='h5'>Contact</Typography></div>
         <div className="items">
@@ -62,7 +69,9 @@ const PageFooter = () => {
           <div className="item"><Typography>Jobseeker</Typography></div>
         </div>
       </section>
+
     </div>
+
     <hr />
     <div className="footer2">
       <div>
@@ -70,9 +79,9 @@ const PageFooter = () => {
         , original website : <a href='https://refier.com/jobs/'>https://refier.com/jobs/</a>
       </div>
       <div className='items'>
-        <div className="item">Privacy Policy</div>
-        <div className="item border">Terms</div>
-        <div className="item">Sitemap</div>
+        <div className="item">&nbsp;Privacy Policy&nbsp;</div>
+        <div className="item border">&nbsp;Terms&nbsp;</div>
+        <div className="item">&nbsp;Sitemap&nbsp;</div>
       </div>
     </div>
   </footer>;
