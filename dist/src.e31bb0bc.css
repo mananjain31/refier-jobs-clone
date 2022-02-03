@@ -89,9 +89,11 @@
 .filters-modal .filters-modal-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .filters-modal .filters-modal-header .MuiTypography-root {
-  font-size: medium;
+  font-size: large;
+  color: teal;
 }
 .switch-container {
   display: flex;

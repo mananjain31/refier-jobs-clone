@@ -92086,7 +92086,7 @@ var FiltersModal = function FiltersModal(props) {
     className: "filters-modal-header"
   }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Filters"), " ", /*#__PURE__*/_react.default.createElement(_core.IconButton, {
     onClick: props.onClose
-  }, /*#__PURE__*/_react.default.createElement(CloseIcon, null))), /*#__PURE__*/_react.default.createElement("hr", null), /*#__PURE__*/_react.default.createElement(_FiltersContent.default, null))));
+  }, /*#__PURE__*/_react.default.createElement(CloseIcon, null))), /*#__PURE__*/_react.default.createElement(_core.Divider, null), /*#__PURE__*/_react.default.createElement(_FiltersContent.default, null))));
 };
 
 var _default = FiltersModal;
@@ -92679,7 +92679,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58113" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57940" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

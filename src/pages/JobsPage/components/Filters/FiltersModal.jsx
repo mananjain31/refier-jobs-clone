@@ -1,4 +1,4 @@
-import { Box, IconButton, Modal, Paper, Typography } from '@material-ui/core';
+import { Box, Divider, IconButton, Modal, Paper, Typography } from '@material-ui/core';
 import React from 'react';
 import './Filters.scss'
 import FiltersContent from './FiltersContent';
@@ -24,7 +24,7 @@ const FiltersModal = (props) => {
                 <div className='filters-modal-header'>
                     <Typography>Filters</Typography> <IconButton onClick={props.onClose}><CloseIcon/></IconButton>
                 </div>
-                <hr/>
+                <Divider/>
                 <FiltersContent/>  
             </Paper>
         </Box>
