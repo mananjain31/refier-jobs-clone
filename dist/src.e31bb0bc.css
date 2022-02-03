@@ -117,6 +117,53 @@ header .app-bar .heading {
     padding: 0.7rem;
   }
 }
+.login {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: sticky;
+  top: 0.7rem;
+}
+.login .MuiTypography-root {
+  font-weight: 600;
+  font-size: small;
+}
+.login .MuiTypography-root.small {
+  color: darkgray;
+}
+.login .MuiTypography-root.teal {
+  color: teal;
+}
+.login .login-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.login .login-header .MuiTypography-root {
+  font-weight: 600;
+  font-size: x-large;
+}
+.login .login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.login .login-form .google-button {
+  background-color: white;
+}
+.login .login-form .login-button {
+  color: white;
+  background-color: black;
+  box-shadow: 1px 5px 15px gray;
+  padding: 0.5rem;
+}
+
+.login-modal {
+  width: 400px;
+  margin: auto;
+  margin-top: 0.7rem;
+}
 .card {
   padding: 2rem;
   margin-bottom: 1rem;

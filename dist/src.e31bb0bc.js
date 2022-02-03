@@ -84176,6 +84176,8 @@ var _excluded = ["label", "required", "children"];
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -84192,7 +84194,9 @@ var InputComponent = function InputComponent(_ref) {
     style: {
       color: 'red'
     }
-  }, "*")), children ? children : /*#__PURE__*/_react.default.createElement("input", rest));
+  }, "*")), children ? children : /*#__PURE__*/_react.default.createElement("input", _extends({}, rest, {
+    required: required
+  })));
 };
 
 var _default = InputComponent;
@@ -92201,7 +92205,207 @@ var ContactUsModal = function ContactUsModal(props) {
 
 var _default = ContactUsModal;
 exports.default = _default;
-},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","./ContactUs":"shared/ContactUs/ContactUs.jsx","./ContactUs.scss":"shared/ContactUs/ContactUs.scss"}],"shared/Navigations/Navigations.scss":[function(require,module,exports) {
+},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","./ContactUs":"shared/ContactUs/ContactUs.jsx","./ContactUs.scss":"shared/ContactUs/ContactUs.scss"}],"shared/Login/Login.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"shared/Login/LoginForm.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _core = require("@material-ui/core");
+
+var _react = _interopRequireDefault(require("react"));
+
+var _Button = _interopRequireDefault(require("../Button/Button"));
+
+var _InputComponent = _interopRequireDefault(require("../InputComponent/InputComponent"));
+
+require("./Login.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var Close = _react.default.lazy(function () {
+  return require("_bundle_loader")(require.resolve('@material-ui/icons/Close'));
+});
+
+var CloseIcon = function CloseIcon() {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Suspense, {
+    fallback: /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "...")
+  }, /*#__PURE__*/_react.default.createElement(Close, null));
+};
+
+var GoogleIcon = function GoogleIcon() {
+  return /*#__PURE__*/_react.default.createElement("img", {
+    style: {
+      width: '20px',
+      height: '20px'
+    },
+    src: "https://cdn-icons-png.flaticon.com/512/2991/2991148.png"
+  });
+};
+
+var ContentDivider = function ContentDivider(_ref) {
+  var children = _ref.children;
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/_react.default.createElement(_core.Divider, {
+    style: {
+      flex: 1
+    }
+  }), /*#__PURE__*/_react.default.createElement(_core.Typography, {
+    style: {
+      margin: "0 1rem",
+      color: 'gray'
+    }
+  }, children), /*#__PURE__*/_react.default.createElement(_core.Divider, {
+    style: {
+      flex: 1
+    }
+  })));
+};
+
+var LoginForm = function LoginForm(props) {
+  var _React$useState = _react.default.useState({
+    email: '',
+    password: ''
+  }),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      state = _React$useState2[0],
+      setState = _React$useState2[1];
+
+  var handleSubmit = function handleSubmit(ev) {
+    ev.preventDefault();
+    alert('Successfully Logged In');
+    if (props.isModal) props.onClose();
+    return false;
+  };
+
+  return /*#__PURE__*/_react.default.createElement(_core.Paper, {
+    className: "login"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "login-header"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, "Login"), props.isModal && /*#__PURE__*/_react.default.createElement(_core.IconButton, {
+    onClick: props.onClose
+  }, /*#__PURE__*/_react.default.createElement(CloseIcon, null))), /*#__PURE__*/_react.default.createElement("form", {
+    className: "login-form",
+    noValidate: false,
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/_react.default.createElement(_Button.default, {
+    startIcon: /*#__PURE__*/_react.default.createElement(GoogleIcon, null),
+    variant: "contained",
+    className: "google-button"
+  }, "Sign in with Google"), /*#__PURE__*/_react.default.createElement(ContentDivider, null, "OR"), /*#__PURE__*/_react.default.createElement(_InputComponent.default, {
+    label: 'Email',
+    type: "email",
+    required: true,
+    placeholder: "Email",
+    value: state.email,
+    onChange: function onChange(ev) {
+      return setState(function (prev) {
+        return _objectSpread(_objectSpread({}, prev), {}, {
+          'email': ev.target.value
+        });
+      });
+    }
+  }), /*#__PURE__*/_react.default.createElement(_InputComponent.default, {
+    label: 'Password',
+    type: "password",
+    minLength: 8,
+    required: true,
+    placeholder: "Must be at least 8 characters",
+    value: state.password,
+    onChange: function onChange(ev) {
+      return setState(function (prev) {
+        return _objectSpread(_objectSpread({}, prev), {}, {
+          'password': ev.target.value
+        });
+      });
+    }
+  }), /*#__PURE__*/_react.default.createElement(_Button.default, {
+    type: "submit",
+    className: "login-button",
+    variant: "contained"
+  }, "Login"), /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '0.2rem'
+    }
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, {
+    className: "small"
+  }, "New to Refier?"), /*#__PURE__*/_react.default.createElement(_core.Typography, {
+    className: "small"
+  }, "Register as"), /*#__PURE__*/_react.default.createElement(_core.Typography, {
+    className: "teal"
+  }, "Student"), /*#__PURE__*/_react.default.createElement(_core.Typography, {
+    className: "small"
+  }, " / "), /*#__PURE__*/_react.default.createElement(_core.Typography, {
+    className: "teal"
+  }, "Enterprise"))));
+};
+
+var _default = LoginForm;
+exports.default = _default;
+},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","../Button/Button":"shared/Button/Button.jsx","../InputComponent/InputComponent":"shared/InputComponent/InputComponent.jsx","./Login.scss":"shared/Login/Login.scss","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","@material-ui/icons/Close":[["Close.11654daf.js","../node_modules/@material-ui/icons/Close.js"],"Close.11654daf.js.map","../node_modules/@material-ui/icons/Close.js"]}],"shared/Login/LoginModal.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _core = require("@material-ui/core");
+
+var _react = _interopRequireDefault(require("react"));
+
+require("./Login.scss");
+
+var _LoginForm = _interopRequireDefault(require("./LoginForm"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var LoginModal = function LoginModal(props) {
+  return /*#__PURE__*/_react.default.createElement(_core.Modal, {
+    open: props.open,
+    onClose: props.onClose
+  }, /*#__PURE__*/_react.default.createElement(_core.Box, {
+    className: "login-modal"
+  }, /*#__PURE__*/_react.default.createElement(_LoginForm.default, {
+    isModal: true,
+    onClose: props.onClose
+  })));
+};
+
+var _default = LoginModal;
+exports.default = _default;
+},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","./Login.scss":"shared/Login/Login.scss","./LoginForm":"shared/Login/LoginForm.jsx"}],"shared/Navigations/Navigations.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -92221,6 +92425,8 @@ var _core = require("@material-ui/core");
 var _Button = _interopRequireDefault(require("../Button/Button"));
 
 var _ContactUsModal = _interopRequireDefault(require("../ContactUs/ContactUsModal"));
+
+var _LoginModal = _interopRequireDefault(require("../Login/LoginModal"));
 
 require("./Navigations.scss");
 
@@ -92252,8 +92458,19 @@ var Navigations = function Navigations() {
       contactUsModal = _React$useState2[0],
       setContactUsModal = _React$useState2[1];
 
+  var _React$useState3 = _react.default.useState(false),
+      _React$useState4 = _slicedToArray(_React$useState3, 2),
+      loginModal = _React$useState4[0],
+      setLoginModal = _React$useState4[1];
+
   var toggleContactUsModal = function toggleContactUsModal() {
     return setContactUsModal(function (prev) {
+      return !prev;
+    });
+  };
+
+  var toggleLoginModal = function toggleLoginModal() {
+    return setLoginModal(function (prev) {
       return !prev;
     });
   };
@@ -92271,10 +92488,7 @@ var Navigations = function Navigations() {
     item: true
   }, /*#__PURE__*/_react.default.createElement(_Button.default, {
     onClick: toggleContactUsModal
-  }, "Contact Us"), /*#__PURE__*/_react.default.createElement(_ContactUsModal.default, {
-    open: contactUsModal,
-    onClose: toggleContactUsModal
-  })), /*#__PURE__*/_react.default.createElement(_core.Grid, {
+  }, "Contact Us")), /*#__PURE__*/_react.default.createElement(_core.Grid, {
     item: true
   }, /*#__PURE__*/_react.default.createElement(_Button.default, {
     endIcon: /*#__PURE__*/_react.default.createElement(ArrowDropDownIcon, null)
@@ -92284,11 +92498,13 @@ var Navigations = function Navigations() {
     item: true
   }, /*#__PURE__*/_react.default.createElement(_Button.default // className={classes.btn}
   , {
+    onClick: toggleLoginModal,
     variant: "outlined"
   }, "Login")), /*#__PURE__*/_react.default.createElement(_core.Grid, {
     item: true
   }, /*#__PURE__*/_react.default.createElement(_Button.default // className={classes.regBtn}
   , {
+    onClick: toggleLoginModal,
     variant: "contained",
     color: "primary",
     style: {
@@ -92299,12 +92515,18 @@ var Navigations = function Navigations() {
     mdUp: true
   }, /*#__PURE__*/_react.default.createElement(_core.Grid, {
     item: true
-  }, /*#__PURE__*/_react.default.createElement(MenuIcon, null))))));
+  }, /*#__PURE__*/_react.default.createElement(MenuIcon, null))))), /*#__PURE__*/_react.default.createElement(_ContactUsModal.default, {
+    open: contactUsModal,
+    onClose: toggleContactUsModal
+  }), /*#__PURE__*/_react.default.createElement(_LoginModal.default, {
+    open: loginModal,
+    onClose: toggleLoginModal
+  }));
 };
 
 var _default = Navigations;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","../Button/Button":"shared/Button/Button.jsx","../ContactUs/ContactUsModal":"shared/ContactUs/ContactUsModal.jsx","./Navigations.scss":"shared/Navigations/Navigations.scss","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","@material-ui/icons/Menu":[["Menu.4143c7d8.js","../node_modules/@material-ui/icons/Menu.js"],"Menu.4143c7d8.js.map","../node_modules/@material-ui/icons/Menu.js"],"@material-ui/icons/ArrowDropDown":[["ArrowDropDown.6686fa42.js","../node_modules/@material-ui/icons/ArrowDropDown.js"],"ArrowDropDown.6686fa42.js.map","../node_modules/@material-ui/icons/ArrowDropDown.js"]}],"shared/PageHeader/PageHeader.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","../Button/Button":"shared/Button/Button.jsx","../ContactUs/ContactUsModal":"shared/ContactUs/ContactUsModal.jsx","../Login/LoginModal":"shared/Login/LoginModal.jsx","./Navigations.scss":"shared/Navigations/Navigations.scss","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","@material-ui/icons/Menu":[["Menu.4143c7d8.js","../node_modules/@material-ui/icons/Menu.js"],"Menu.4143c7d8.js.map","../node_modules/@material-ui/icons/Menu.js"],"@material-ui/icons/ArrowDropDown":[["ArrowDropDown.6686fa42.js","../node_modules/@material-ui/icons/ArrowDropDown.js"],"ArrowDropDown.6686fa42.js.map","../node_modules/@material-ui/icons/ArrowDropDown.js"]}],"shared/PageHeader/PageHeader.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -92679,7 +92901,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57940" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58397" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

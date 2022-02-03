@@ -8,7 +8,7 @@ const InputComponent = ({label, required, children , ...rest }) => {
       {
         children ? 
           children
-         : <input {...rest}/>
+         : <input {...rest} required={required}/>
       }
   </div>
 };
