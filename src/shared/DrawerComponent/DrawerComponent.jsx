@@ -11,7 +11,7 @@ const CloseIcon = ()=>(
 
 const DrawerComponent = (props) => {
   return <Drawer
-        anchor={props.anchor?props.anchor:'right'}
+        anchor={'right'}
         open={props.open}
         onClose={props.onClose}
     >
@@ -30,7 +30,6 @@ const DrawerComponent = (props) => {
             }
         </List>
     </Drawer>
-;
-};
+}
 
 export default DrawerComponent;

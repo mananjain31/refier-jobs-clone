@@ -31,7 +31,7 @@ const JobsPage = () => {
       </Grid>
     </main>
 
-    <FooterComponent/>
+    {/* <FooterComponent/> */}
   </>
 };
 

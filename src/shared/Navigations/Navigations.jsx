@@ -79,12 +79,6 @@ const Navigations = () => {
     </React.Suspense>
 
     {/* Modals :  and drawers */}
-        
-        <DrawerComponent
-            open={drawer}
-            onClose={toggleDrawer}
-            items={['MarketPlace', 'DrawerItem 2', 'DrawerItem 3']}
-        />
         <ContactUsModal
             open={contactUsModal}
             onClose={toggleContactUsModal}
@@ -93,6 +87,11 @@ const Navigations = () => {
         <LoginModal 
             open={loginModal}
             onClose={toggleLoginModal}
+        />
+        <DrawerComponent
+            open={drawer}
+            onClose={toggleDrawer}
+            items={['MarketPlace', 'DrawerItem 2', 'DrawerItem 3']}
         />
     {/* Modals ends */}
   </>;
