@@ -32,6 +32,7 @@ const ContactUsForm = () => {
 
         <InputComponent label={'Mobile Number'}>
             <PhoneInput
+                className="phone-input"
                 country={'in'}
                 value={state.phoneNumber}
                 onChange={phone=>setState(prev=>({...prev, phoneNumber : phone}))}

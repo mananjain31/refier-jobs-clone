@@ -4,8 +4,8 @@
   "main": "src/index.html",
   "license": "MIT",
   "scripts": {
-    "start": "parcel src/index.html --open",
-    "build": "parcel build src/index.html"
+    "start": "parcel serve src/index.html --open",
+    "build": "parcel build  src/index.html"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.3",

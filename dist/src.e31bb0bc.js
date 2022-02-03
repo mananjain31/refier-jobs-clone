@@ -84286,6 +84286,7 @@ var ContactUsForm = function ContactUsForm() {
   }), /*#__PURE__*/_react.default.createElement(_InputComponent.default, {
     label: 'Mobile Number'
   }, /*#__PURE__*/_react.default.createElement(_reactPhoneInput.default, {
+    className: "phone-input",
     country: 'in',
     value: state.phoneNumber,
     onChange: function onChange(phone) {
@@ -92833,7 +92834,27 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"pages/JobsPage/index.jsx":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"shared/FooterComponent/FooterComponent.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var FooterComponent = function FooterComponent() {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "footer"
+  });
+};
+
+var _default = FooterComponent;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js"}],"pages/JobsPage/index.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -92854,6 +92875,8 @@ var _PageHeader = _interopRequireDefault(require("../../shared/PageHeader/PageHe
 var _JobsListComponent = _interopRequireDefault(require("./components/JobsListComponent/JobsListComponent"));
 
 require("./index.scss");
+
+var _FooterComponent = _interopRequireDefault(require("../../shared/FooterComponent/FooterComponent"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -92877,12 +92900,12 @@ var JobsPage = function JobsPage() {
     item: true,
     md: 3,
     lg: 3
-  }, /*#__PURE__*/_react.default.createElement(_ContactUs.default, null), " ")))), /*#__PURE__*/_react.default.createElement("footer", null));
+  }, /*#__PURE__*/_react.default.createElement(_ContactUs.default, null), " ")))), /*#__PURE__*/_react.default.createElement(_FooterComponent.default, null));
 };
 
 var _default = JobsPage;
 exports.default = _default;
-},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","../../shared/ContactUs/ContactUs":"shared/ContactUs/ContactUs.jsx","./components/Filters/Filters":"pages/JobsPage/components/Filters/Filters.jsx","../../shared/PageHeader/PageHeader":"shared/PageHeader/PageHeader.jsx","./components/JobsListComponent/JobsListComponent":"pages/JobsPage/components/JobsListComponent/JobsListComponent.jsx","./index.scss":"pages/JobsPage/index.scss"}],"App.jsx":[function(require,module,exports) {
+},{"@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react":"../node_modules/react/index.js","../../shared/ContactUs/ContactUs":"shared/ContactUs/ContactUs.jsx","./components/Filters/Filters":"pages/JobsPage/components/Filters/Filters.jsx","../../shared/PageHeader/PageHeader":"shared/PageHeader/PageHeader.jsx","./components/JobsListComponent/JobsListComponent":"pages/JobsPage/components/JobsListComponent/JobsListComponent.jsx","./index.scss":"pages/JobsPage/index.scss","../../shared/FooterComponent/FooterComponent":"shared/FooterComponent/FooterComponent.jsx"}],"App.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -93027,7 +93050,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54596" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51761" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
